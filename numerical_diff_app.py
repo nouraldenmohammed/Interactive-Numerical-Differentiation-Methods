@@ -178,7 +178,7 @@ with tab2:
             index = [f"i={i} (h={h_romb / 2**i})" for i in range(n_rows)]
             
             df_R = pd.DataFrame(R, columns=columns, index=index)
-            df_R = df_R.applymap(lambda x: f"{x:.8f}" if x != 0.0 else "")
+            df_R = df_R.map(lambda x: f"{x:.8f}" if x != 0.0 else "")
             
             st.markdown("**Richardson Table:**")
             st.dataframe(df_R, use_container_width=True)
